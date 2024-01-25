@@ -1,0 +1,12 @@
+{% extends 'posts_by_category.html' %}
+
+    {% block category_title %}
+        <h3 class="text-warning">Search results for keyword: {{keyword}}</h3>
+    {% endblock category_title %}
+
+    {% block null_result %} 
+        <div class="col-12">
+            <p>No posts found with keyword: {{keyword}}.</p>
+            <a href="{% url 'home' %}" class="btn btn-secondary">Back to home</a>
+        </div>     
+    {% endblock null_result %}
