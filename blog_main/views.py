@@ -40,16 +40,13 @@ from django.shortcuts import render, redirect
 
 def user_login(request):
     if request.method == "POST":
-        print("POST request received")
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
-            print("Form is valid")
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
 
             user = authenticate(username=username, password=password)
             if user is not None:
-                print("User authenticated")
                 login(request, user)
                 return redirect('home')
             else:
