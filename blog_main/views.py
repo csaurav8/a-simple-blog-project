@@ -56,7 +56,6 @@ def user_login(request):
             print(form.errors)
     
     else:
-        print("GET request received")
         form = AuthenticationForm()
     
     context = {
